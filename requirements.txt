@@ -8,3 +8,4 @@ geopy==2.3.0
 waitress==2.1.2
 openpyxl==3.1.2
 paddlepaddle==2.6.2
+numpy==1.23.5
