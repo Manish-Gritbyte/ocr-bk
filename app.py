@@ -7,6 +7,7 @@ import time
 from symspellpy import SymSpell, Verbosity
 from geopy.geocoders import Nominatim
 from flask import send_file
+from waitress import serve  # Use Waitress for production
 
 
 app = Flask(__name__)
@@ -126,4 +127,5 @@ def download_excel():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    serve(app, host="0.0.0.0", port=port)
